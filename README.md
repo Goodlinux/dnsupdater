@@ -26,7 +26,8 @@ docker build -t NomDeVotreConteneur --no-cache --force-rm .
 Utilisation du projet : https://github.com/Domain-Connect/domainconnect_python 
 
 # ENVIRONMENT 
-DOMAIN = DNS DOMAIN name to be updated 
-TZ = TimeZone  
-CONFFILE = place to store dns config and key 
-CRONDELAY = delay to verify if the ip has changes in minutes  */5 for evry 5 minutes 
+
+ DOMAIN = DNS DOMAIN name to be updated 
+ TZ = TimeZone  
+ CONFFILE = place to store dns config and key 
+ CRONDELAY = delay to verify if the ip has changes in minutes  */5 for evry 5 minutes 

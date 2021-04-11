@@ -14,6 +14,7 @@ RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi
   && echo "domain-connect-dyndns update --all --config /root/dom-settings.txt"   >> /usr/local/bin/updateDomain \ 
   && echo "echo '-----End-------------------------------------------------------------'" >> /usr/local/bin/updateDomain \ 
   && echo "apk -U upgrade" > /usr/local/bin/updtPkg \ 
+  && echo "name_servers=1.1.1.1" > /etc/resolvconf.conf  \ 
   && echo 'IPFILE=/var/local/currentip' 		> /usr/local/bin/chkip    \
   && echo 'NEW_IP=$(curl -s ifconfig.me)' 		>> /usr/local/bin/chkip    \
   && echo 'if [ ! -e $IPFILE ]; then' 			>> /usr/local/bin/chkip    \

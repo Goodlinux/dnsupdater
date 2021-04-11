@@ -6,7 +6,7 @@ ENV DOMAIN=test.maillet.me \
     CONFFILE=/root/domain-settings   \
     TZ=Europe/Paris
 
-RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi-dev curl apk-cron tzdata nano \ 
+RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi-dev curl apk-cron tzdata nano openresolv \ 
   && pip install pip domain-connect-dyndns --upgrade \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >  /etc/timezone \ 
   && echo "echo '-----Begin-----------------------------------------------------------'" > /usr/local/bin/updateDomain \ 

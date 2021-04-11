@@ -35,7 +35,7 @@ RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi
   && echo "then "   >> /usr/local/bin/entrypoint.sh  \ 
   && echo "        crond -f"  >> /usr/local/bin/entrypoint.sh  \  
   && echo "else "   >> /usr/local/bin/entrypoint.sh  \ 
-  && echo "        echo "Le fichier \$CONFFILE n existe pas Domaine : \$DOMAIN "  >> /usr/local/bin/entrypoint.sh  \ 
+  && echo "        echo 'Le fichier $CONFFILE n existe pas Domaine : $DOMAIN '"  >> /usr/local/bin/entrypoint.sh  \ 
   && echo "        domain-connect-dyndns setup --domain \$DOMAIN --config \$CONFFILE "  >> /usr/local/bin/entrypoint.sh  \
   && echo "        crond -f " >> /usr/local/entrypoint.sh  \ 
   && echo "fi "   >> /usr/local/bin/entrypoint.sh  \

@@ -41,5 +41,5 @@ RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi
   && echo "fi "   >> /usr/local/bin/entrypoint.sh  \
   && chmod a+x /usr/local/bin/*
 
-# Lancement du daemon cron 
+# Lancement du daemon cron
 CMD /usr/local/bin/entrypoint.sh

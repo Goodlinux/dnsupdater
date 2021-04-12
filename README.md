@@ -18,12 +18,18 @@
  domain-connect-dyndns setup --domain xx.votredomaine.com 
  et suivez les instructions 
 
- Pour construire l'image Docker, lancer la commande 
-
+ Pour construire l'image Docker, télécharger le fichier DockerFile dans un dossier, placez vous dans le dossier et lancer la commande 
  docker build -t NomDeVotreConteneur --no-cache --force-rm . 
+ Vous pouvez aussi télécharger l'image depuis le Docker Hub : https://hub.docker.com/r/goodlinux/dnsupdater
 
  Utilisation du projet : https://github.com/Domain-Connect/domainconnect_python 
 
+# INSTALLATION 
+ Lors du premier lancement, un message va apparaitre vous invitant a coller une adresse dans le navigateur WEB 
+ pour récupérer la cléf de connexion pour la mise à jour du nom de domaine. 
+ Copiez cette adresse compléte dans le navigateur Web, autorisez l'accés, copiez le code d'authorisation et collez le 
+ afin d'autoriser cette connexion
+ 
 # ENVIRONMENT 
 
  DOMAIN = DNS DOMAIN name to be updated  

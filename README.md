@@ -26,9 +26,11 @@
 
 # INSTALLATION 
  Lors du premier lancement, un message va apparaitre vous invitant a coller une adresse dans le navigateur WEB 
+  https://domainconnect.1and1.com/async/v2/domainTemplates/providers/domainconnect.org?client_id=domainconnect.org&scope=dynamicdns-v2&domain=dns.me&host=my&IP=0.0.0.0&IPv4=0.0.0.0&IPv6=%3A%3A&redirect_uri=https%3A%2F%2Fdynamicdns.domainconnect.org%2Fddnscode
  pour récupérer la cléf de connexion pour la mise à jour du nom de domaine. 
  Copiez cette adresse compléte dans le navigateur Web, autorisez l'accés, copiez le code d'authorisation et collez le 
  afin d'autoriser cette connexion
+
  
 # ENVIRONMENT 
  

@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Ludovic MAILLET <Ludo.goodlinux@gmail.com>
 
-ENV DOMAIN=test.maillet.me \ 
+ENV DOMAIN=my.dns.com \ 
     CRONDELAY=*/5   \
     CONFFILE=/root/domain-settings   \
     TZ=Europe/Paris
@@ -45,5 +45,5 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && chmod a+x /usr/local/bin/*
 
 # Lancement du daemon cron
-#CMD /usr/local/bin/entrypoint.sh
-CMD /bin/sh
+CMD /usr/local/bin/entrypoint.sh
+#CMD /bin/sh

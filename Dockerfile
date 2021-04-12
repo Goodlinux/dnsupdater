@@ -28,20 +28,19 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo 'else' 								>> /usr/local/bin/chkip    \
   && echo '        echo $(date) " ==> IP : $CUR_IP pas de mise à jour"' >> /usr/local/bin/chkip    \
   && echo 'fi' 									>> /usr/local/bin/chkip    \
-  && echo '\$CRONDELAY     *       *       *       *       /usr/local/bin/chkip' >> /etc/crontabs/root \
+  && echo '$CRONDELAY     *       *       *       *       /usr/local/bin/chkip' >> /etc/crontabs/root \
   && echo '00     1       *       *       sun       /usr/local/bin/updtPkg' >> /etc/crontabs/root \  
   && echo "#! /bin/sh" > /usr/local/bin/entrypoint.sh \
   && echo "echo 'nameserver      1.1.1.1' > /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \
   && echo "echo 'nameserver      1.0.0.1' >> /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \
   && echo "echo 'nameserver      8.8.8.8' >> /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \  
-  && echo "if [ -e  \$CONFFILE ]  " >> /usr/local/bin/entrypoint.sh  \ 
+  && echo "if [ !-e  \$CONFFILE ]  " >> /usr/local/bin/entrypoint.sh  \ 
   && echo "then "   >> /usr/local/bin/entrypoint.sh  \ 
-  && echo "        crond -f"  >> /usr/local/bin/entrypoint.sh  \  
-  && echo "else "   >> /usr/local/bin/entrypoint.sh  \ 
-  && echo "        echo 'Le fichier $CONFFILE n existe pas Domaine : $DOMAIN '"  >> /usr/local/bin/entrypoint.sh  \ 
+  && echo "        echo 'Le fichier $CONFFILE n existe pas '"  >> /usr/local/bin/entrypoint.sh  \ 
   && echo "        domain-connect-dyndns setup --domain \$DOMAIN --config \$CONFFILE "  >> /usr/local/bin/entrypoint.sh  \
-  && echo "        crond -f " >> /usr/local/entrypoint.sh  \ 
   && echo "fi "   >> /usr/local/bin/entrypoint.sh  \
+  && echo "crond -b " >> /usr/local/entrypoint.sh  \
+  && echo "/bin/sh " >> /usr/local/entrypoint.sh  \
   && chmod a+x /usr/local/bin/*
 
 # Lancement du daemon cron

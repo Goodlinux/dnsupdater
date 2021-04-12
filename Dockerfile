@@ -6,7 +6,7 @@ ENV DOMAIN=test.maillet.me \
     CONFFILE=/root/domain-settings   \
     TZ=Europe/Paris
 
-RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi-dev curl apk-cron tzdata nano openresolv \ 
+RUN apk -U add apk add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip curl apk-cron tzdata \ 
   && pip install pip domain-connect-dyndns --upgrade \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >  /etc/timezone \ 
   && echo "echo '-----Begin-----------------------------------------------------------'" > /usr/local/bin/updateDomain \ 
@@ -31,7 +31,9 @@ RUN apk -U add python3 python3-dev py3-pip cargo openssl-dev gcc musl-dev libffi
   && echo '\$CRONDELAY     *       *       *       *       /usr/local/bin/chkip' >> /etc/crontabs/root \
   && echo '00     1       *       *       sun       /usr/local/bin/updtPkg' >> /etc/crontabs/root \  
   && echo "#! /bin/sh" > /usr/local/bin/entrypoint.sh \
-  && echo "resolvconf -u" >> /usr/local/bin/entrypoint.sh  \
+  && echo "echo 'nameserver      1.1.1.1' > /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \
+  && echo "echo 'nameserver      1.0.0.1' >> /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \
+  && echo "echo 'nameserver      8.8.8.8' >> /etc/resolv.conf"  >> /usr/local/bin/entrypoint.sh \  
   && echo "if [ -e  \$CONFFILE ]  " >> /usr/local/bin/entrypoint.sh  \ 
   && echo "then "   >> /usr/local/bin/entrypoint.sh  \ 
   && echo "        crond -f"  >> /usr/local/bin/entrypoint.sh  \  

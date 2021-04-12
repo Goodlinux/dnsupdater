@@ -31,8 +31,8 @@
  afin d'autoriser cette connexion
  
 # ENVIRONMENT 
-
- DOMAIN = DNS DOMAIN name to be updated  ex : my.dns.org 
- TZ = TimeZone  ex : Europe/Paris 
- CONFFILE = place to store dns config and key  ex : /root/dns-update.conf 
+ 
+ DOMAIN = DNS DOMAIN name to be updated  ex : my.dns.org  
+ TZ = TimeZone  ex : Europe/Paris  
+ CONFFILE = place to store dns config and key  ex : /root/dns-update.conf  
  CRONDELAY = delay to verify if the ip has changes in minutes ex :  */5 for evry 5 minutes   

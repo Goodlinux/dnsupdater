@@ -12,10 +12,6 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo 'apk -U upgrade'                                                                                                      > /usr/local/bin/updtPkg \ 
   && echo 'IPFILE=/var/local/currentip' 		                                                                                > /usr/local/bin/chkip    \
   && echo 'NEW_IP=$(curl -s ifconfig.me)' 		                                                                                        >> /usr/local/bin/chkip    \
-  && echo 'if [ ! -e $IPFILE ]; then' 			                                                                                        >> /usr/local/bin/chkip    \
-  && echo '        domain-connect-dyndns update --all --config $CONFFILE'                                                               >> /usr/local/bin/chkip    \
-  && echo '        curl -s ifconfig.me > $IPFILE'                                                                                       >> /usr/local/bin/chkip    \
-  && echo 'fi' 									                                                                                        >> /usr/local/bin/chkip    \
   && echo 'CUR_IP=$(cat /var/local/currentip)' 	                                                                                        >> /usr/local/bin/chkip    \
   && echo 'if [ "$NEW_IP" != "$CUR_IP" ]; then' 	                                                                                    >> /usr/local/bin/chkip    \
   && echo '        echo $(date) " ==> $NEW_IP mise à jour demandée"'                                                                    >> /usr/local/bin/chkip    \

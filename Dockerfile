@@ -13,6 +13,7 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo 'IPFILE=/var/local/currentip' 		                                                                                > /usr/local/bin/chkip    \
   && echo 'NEW_IP=$(curl -s ifconfig.me)' 		                                                                                        >> /usr/local/bin/chkip    \
   && echo 'if [ ! -e $IPFILE ]; then' 			                                                                                        >> /usr/local/bin/chkip    \
+  && echo '        domain-connect-dyndns update --all --config $CONFFILE'                                                               >> /usr/local/bin/chkip    \
   && echo '        curl -s ifconfig.me > $IPFILE'                                                                                       >> /usr/local/bin/chkip    \
   && echo 'fi' 									                                                                                        >> /usr/local/bin/chkip    \
   && echo 'CUR_IP=$(cat /var/local/currentip)' 	                                                                                        >> /usr/local/bin/chkip    \
@@ -24,7 +25,7 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo '        echo $(date) " ==> IP : $CUR_IP pas de mise à jour"'                                                                 >> /usr/local/bin/chkip    \
   && echo 'fi' 									                                                                                        >> /usr/local/bin/chkip    \
   && echo 'domain-connect-dyndns setup --domain \$DOMAIN --config \$CONFFILE '                                                  > /usr/local/bin/domainSetup.sh    \
-  && echo '$CRONDELAY     *       *       *       *       /usr/local/bin/chkip'                                                 >> /etc/crontabs/root \
+  && echo $CRONDELAY'     *       *       *       *       /usr/local/bin/chkip'                                                 >> /etc/crontabs/root \
   && echo '00     1       *       *       sun       /usr/local/bin/updtPkg'                                                         >> /etc/crontabs/root \  
   && echo "#! /bin/sh"                                                                                                          > /usr/local/bin/entrypoint.sh \
   && echo "echo 'nameserver      1.1.1.1' > /etc/resolv.conf"                                                                           >> /usr/local/bin/entrypoint.sh \

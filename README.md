@@ -30,7 +30,11 @@
  pour récupérer la cléf de connexion pour la mise à jour du nom de domaine. 
  Copiez cette adresse compléte dans le navigateur Web, autorisez l'accés, copiez le code d'authorisation et collez le 
  afin d'autoriser cette connexion
-
+ 
+ Vous pouvez aussi opter pour une configuration manuelle, quand votre container est lancé, vous pouvez dans un shell lancer la comande suivante : 
+ domain-connect-dyndns setup --domain new.domain.org --config \$CONFFILE 
+ and follow the instructions. You can parameter others domain via this command. at the launch of update, all the parameterised domain will be updated. 
+ 
  
 # ENVIRONMENT 
  

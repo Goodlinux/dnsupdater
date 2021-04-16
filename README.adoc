@@ -18,7 +18,7 @@ et suivez les instructions
 Pour construire l'image Docker, télécharger le fichier DockerFile dans un dossier, placez vous dans le dossier et lancer la commande 
 docker build -t NomDeVotreConteneur --no-cache --force-rm . 
 Vous pouvez aussi télécharger l'image depuis le Docker Hub : 
-image:https://img.shields.io/static/v1?label=by&message=Image Docker=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
+image:https://img.shields.io/static/v1?label=by&message=Image Docker&color=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
 
 
 

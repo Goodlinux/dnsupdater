@@ -19,11 +19,11 @@ et suivez les instructions
 Pour construire l'image Docker, télécharger le fichier DockerFile dans un dossier, placez vous dans le dossier et lancer la commande 
 docker build -t NomDeVotreConteneur --no-cache --force-rm . 
 Vous pouvez aussi télécharger l'image depuis le Docker Hub : 
+
 image:https://img.shields.io/static/v1?label=Docker&message=Image Docker&color=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
 
-
-
 # INSTALLATION 
+
 Lors du premier lancement, un message va apparaitre vous invitant a coller une adresse dans le navigateur WEB 
 https://domainconnect.1and1.com/async/v2/domainTemplates/providers/domainconnect.org?client_id=domainconnect.org&scope=dynamicdns-v2&domain=dns.me&host=my&IP=0.0.0.0&IPv4=0.0.0.0&IPv6=%3A%3A&redirect_uri=https%3A%2F%2Fdynamicdns.domainconnect.org%2Fddnscode
 

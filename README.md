@@ -1,5 +1,4 @@
 # DnsUpdater 
-[![zipsme](https://img.shields.io/static/v1?label=based_on&message=zipsme&color=blue)](link=https://github.com/zipsme/zipsme,float="left")
 [![domainconnect](https://img.shields.io/static/v1?label=based_on&message=DomainConnectDDNS-Python&color=blue)](link=https://github.com/Domain-Connect/DomainConnectDDNS-Python,float="left")
 
 DSN Update for dns provider like ionos, looks like a DynDSN 

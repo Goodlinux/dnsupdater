@@ -1,9 +1,8 @@
 # DnsUpdater 
- 
-DSN Update for dns provider like ionos, looks like a DynDSN 
-based on the project : 
+[![zipsme](https://img.shields.io/static/v1?label=based_on&message=zipsme&color=blue)](link=https://github.com/zipsme/zipsme,float="left")
+[![domainconnect](https://img.shields.io/static/v1?label=based_on&message=DomainConnectDDNS-Python&color=blue)](link=https://github.com/Domain-Connect/DomainConnectDDNS-Python,float="left")
 
-image:https://img.shields.io/static/v1?label=based on&message=DomainConnectDDNS-Python&color=blue[link=https://github.com/Domain-Connect/DomainConnectDDNS-Python,float="left"]
+DSN Update for dns provider like ionos, looks like a DynDSN 
 
 Take your local IP and send it to ionos if it has changed 
 Contenair Docker to periodcaly update the IP adress of my DNS hosted in Ionos 
@@ -20,7 +19,7 @@ Pour construire l'image Docker, télécharger le fichier DockerFile dans un doss
 docker build -t NomDeVotreConteneur --no-cache --force-rm . 
 Vous pouvez aussi télécharger l'image depuis le Docker Hub : 
 
-image:https://img.shields.io/static/v1?label=docker&message=Image Docker&color=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
+[![docker](https://img.shields.io/static/v1?label=docker&message=Image_Docker_zipsme&color=green)](link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left")
 
 # INSTALLATION 
 

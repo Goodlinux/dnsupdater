@@ -20,7 +20,7 @@ Pour construire l'image Docker, télécharger le fichier DockerFile dans un doss
 docker build -t NomDeVotreConteneur --no-cache --force-rm . 
 Vous pouvez aussi télécharger l'image depuis le Docker Hub : 
 
-image:https://img.shields.io/static/v1?label=Docker&message=Image Docker&color=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
+image:https://img.shields.io/static/v1?label=docker&message=Image Docker&color=green[link=https://hub.docker.com/r/goodlinux/dnsupdater,float="left"]
 
 # INSTALLATION 
 

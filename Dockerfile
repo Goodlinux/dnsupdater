@@ -21,7 +21,7 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo '        echo $(date) " ==> IP : $CUR_IP pas de mise à jour" > /dev/stdout'                                                 >> /usr/local/bin/chkip    \
   && echo 'fi' 									                                                                                      >> /usr/local/bin/chkip    \
   && echo 'domain-connect-dyndns setup --domain \$DOMAIN --config \$CONFFILE > /dev/stdout'                                     > /usr/local/bin/domainSetup.sh    \
-  && echo $CRONDELAY'     *       *       *       *       /usr/local/bin/chkip'                                                 >> /etc/crontabs/root \
+  && echo $CRONDELAY'     *       *       *       *       /usr/local/bin/chkip'                                                 > /etc/crontabs/root \
   && echo '00     1       *       *       sun       /usr/local/bin/updtPkg'                                                           >> /etc/crontabs/root \  
   && echo "#! /bin/sh"                                                                                                          > /usr/local/bin/entrypoint.sh \
   && echo "echo 'nameserver      1.1.1.1' > /etc/resolv.conf"                                                                         >> /usr/local/bin/entrypoint.sh \

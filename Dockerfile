@@ -6,7 +6,7 @@ ENV DOMAIN=my.dns.com \
     CONFFILE=/root/domain-settings   \
     TZ=Europe/Paris
 
-RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip curl apk-cron tzdata \ 
+RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip curl apk-cron tzdata openssh \ 
   && pip install pip domain-connect-dyndns --upgrade \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >  /etc/timezone \ 
   && echo 'apk -U upgrade'                                                                                                      > /usr/local/bin/updtPkg \ 
@@ -35,6 +35,7 @@ RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip cur
   && echo "        domain-connect-dyndns setup --domain \$DOMAIN --config \$CONFFILE > /dev/stdout"                                                >> /usr/local/bin/entrypoint.sh  \
   && echo "fi "                                                                                                                       >> /usr/local/bin/entrypoint.sh  \
   && echo "crond -b "                                                                                                                 >> /usr/local/bin/entrypoint.sh  \
+  && echo "sshd "                                                                                                                 >> /usr/local/bin/entrypoint.sh  \
   && echo "/bin/sh "                                                                                                                  >> /usr/local/bin/entrypoint.sh  \
   && chmod a+x /usr/local/bin/*
 # Lancement du daemon cron

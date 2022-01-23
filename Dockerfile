@@ -5,6 +5,8 @@ ENV DOMAIN=my.dns.com \
     CRONDELAY=*/5   \
     CONFFILE=/root/domain-settings   \
     TZ=Europe/Paris
+    
+EXPOSE 22
 
 RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip curl apk-cron tzdata openssh \ 
   && pip install pip domain-connect-dyndns --upgrade \

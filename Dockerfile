@@ -9,7 +9,9 @@ ENV DOMAIN=my.dns.com \
 EXPOSE 22
 
 RUN apk -U add gcc musl-dev python3-dev libffi-dev openssl-dev cargo py3-pip curl apk-cron tzdata openssh \ 
-  && pip install pip domain-connect-dyndns --upgrade \
+  && pip install pip wheel --upgrade\
+  && pip install cryptography \
+  && pip install domain-connect-dyndns \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >  /etc/timezone \ 
   && echo 'apk -U upgrade'                                                                                                      > /usr/local/bin/updtPkg \ 
   && echo 'IPFILE=/var/local/currentip' 		                                                                                > /usr/local/bin/chkip    \
